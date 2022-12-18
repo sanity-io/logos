@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.0-beta.1](https://github.com/sanity-io/logos/compare/v2.0.1...v2.1.0-beta.1) (2022-12-18)
+
+### Features
+
+- convert to ES package ([1cc486c](https://github.com/sanity-io/logos/commit/1cc486cfd142a405afbd0dd1b90054f01b2d1f9e))
+
+### Bug Fixes
+
+- **deps:** update dependencies ([cab39bd](https://github.com/sanity-io/logos/commit/cab39bd9d53d3bcceca754407b6cbaed0d565b69))
+
 ## [2.0.1](https://github.com/sanity-io/logos/compare/v2.0.0...v2.0.1) (2022-11-24)
 
 ### Bug Fixes
