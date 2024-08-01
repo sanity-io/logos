@@ -48,8 +48,8 @@ importers:
         specifier: ^6.4.8
         version: 6.4.8
       '@testing-library/react':
-        specifier: ^13.4.0
-        version: 13.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^15.0.7
+        version: 15.0.7(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: ^29.5.12
         version: 29.5.12
@@ -1731,20 +1731,24 @@ packages:
   '@sinonjs/fake-timers@10.0.2':
     resolution: {integrity: sha512-SwUDyjWnah1AaNl7kxsa7cfLhlTYoiyhDAIgyh+El30YvXs/o7OLXpYH88Zdhyx9JExKrmHDJ+10bwIcY80Jmw==}
 
-  '@testing-library/dom@8.20.0':
-    resolution: {integrity: sha512-d9ULIT+a4EXLX3UU8FBjauG9NnsZHkHztXoIcTsOKoOw030fyjheN9svkTULjJxtYag9DZz5Jz5qkWZDPxTFwA==}
-    engines: {node: '>=12'}
+  '@testing-library/dom@10.4.0':
+    resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
+    engines: {node: '>=18'}
 
   '@testing-library/jest-dom@6.4.8':
     resolution: {integrity: sha512-JD0G+Zc38f5MBHA4NgxQMR5XtO5Jx9g86jqturNTt2WUfRmLDIY7iKkWHDCCTiDuFMre6nxAD5wHw9W5kI4rGw==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
 
-  '@testing-library/react@13.4.0':
-    resolution: {integrity: sha512-sXOGON+WNTh3MLE9rve97ftaZukN3oNf2KjDy7YTx6hcTO2uuLHuCGynMDhFwGw/jYf4OJ2Qk0i4i79qMNNkyw==}
-    engines: {node: '>=12'}
+  '@testing-library/react@15.0.7':
+    resolution: {integrity: sha512-cg0RvEdD1TIhhkm1IeYMQxrzy0MtUNfa3minv4MjbgcYzJAZ7yD0i0lwoPOTPr+INtiXFezt2o8xMSnyHhEn2Q==}
+    engines: {node: '>=18'}
     peerDependencies:
+      '@types/react': ^18.0.0
       react: ^18.0.0
       react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   '@tootallnate/once@2.0.0':
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -4339,8 +4343,8 @@ packages:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
 
-  lz-string@1.4.4:
-    resolution: {integrity: sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ==}
+  lz-string@1.5.0:
+    resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
 
   magic-string@0.30.5:
@@ -8084,7 +8088,7 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 2.0.0
 
-  '@testing-library/dom@8.20.0':
+  '@testing-library/dom@10.4.0':
     dependencies:
       '@babel/code-frame': 7.24.7
       '@babel/runtime': 7.23.8
@@ -8092,7 +8096,7 @@ snapshots:
       aria-query: 5.3.0
       chalk: 4.1.2
       dom-accessibility-api: 0.5.16
-      lz-string: 1.4.4
+      lz-string: 1.5.0
       pretty-format: 27.5.1
 
   '@testing-library/jest-dom@6.4.8':
@@ -8106,13 +8110,15 @@ snapshots:
       lodash: 4.17.21
       redent: 3.0.0
 
-  '@testing-library/react@13.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@testing-library/react@15.0.7(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.23.8
-      '@testing-library/dom': 8.20.0
+      '@testing-library/dom': 10.4.0
       '@types/react-dom': 18.3.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.3
 
   '@tootallnate/once@2.0.0': {}
 
@@ -11325,7 +11331,7 @@ snapshots:
     dependencies:
       yallist: 4.0.0
 
-  lz-string@1.4.4: {}
+  lz-string@1.5.0: {}
 
   magic-string@0.30.5:
     dependencies:
