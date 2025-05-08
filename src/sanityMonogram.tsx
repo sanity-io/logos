@@ -1,8 +1,6 @@
 import {white} from '@sanity/color'
 import {forwardRef} from 'react'
-
-const NEW_SANITY_ORANGE = '#FF5500'
-const NEW_SANITY_BLACK = '#0D0E12'
+import {NEW_SANITY_BLACK, NEW_SANITY_ORANGE} from './colors'
 
 /**
  * @public
@@ -11,22 +9,24 @@ export type SanityMonogramScheme = 'light' | 'dark' | 'default'
 
 /**
  * @public
+ * @deprecated use {@link SanityMonogramScheme} as the `scheme` prop instead
  */
 export interface SanityMonogramColor {
   bg1: string
-  // @deprecated - `bg2` is unused, use `bg1` instead
+  /**
+   * `bg2` is unused, use `bg1` instead
+   */
   bg2: string
   fg: string
 }
 
-type ColorOnly = {color: SanityMonogramColor; scheme?: undefined}
-type SchemeOnly = {color?: undefined; scheme: SanityMonogramScheme}
-type Neither = {color?: undefined; scheme?: undefined}
-
 /**
  * @public
  */
-export type SanityMonogramProps = ColorOnly | SchemeOnly | Neither
+export type SanityMonogramProps =
+  | {color: SanityMonogramColor; scheme?: undefined}
+  | {color?: undefined; scheme: SanityMonogramScheme}
+  | {color?: undefined; scheme?: undefined}
 
 const SANITY_MONOGRAM_COLOR: {[key in SanityMonogramScheme]: {bg: string; fg: string}} = {
   light: {bg: white.hex, fg: NEW_SANITY_BLACK},

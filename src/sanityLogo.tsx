@@ -1,5 +1,6 @@
-import {black, white} from '@sanity/color'
+import {white} from '@sanity/color'
 import {forwardRef} from 'react'
+import {NEW_SANITY_BLACK} from './colors'
 
 /**
  * @public
@@ -16,7 +17,7 @@ export const SanityLogo = forwardRef(function SanityLogo(
   ref: React.Ref<SVGSVGElement>,
 ) {
   const {dark, ...svgProps} = props
-  const fill = dark ? white.hex : black.hex
+  const fill = dark ? white.hex : NEW_SANITY_BLACK
 
   return (
     <svg
