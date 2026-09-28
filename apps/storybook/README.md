@@ -1,0 +1,13 @@
+# Sanity Logos Storybook
+
+## Storybook guidelines
+
+- All stories must export either a named `Default` or `Basic` story.
+- Avoid creating custom titles for stories - these should be inferred via folder structure alone.
+- Where possible, stories should be kept as simple as possible with minimal custom / presentational props.
+- Prefer setting component values via storybook [args](https://storybook.js.org/docs/react/writing-stories/args) instead of passing them manually in props.
+
+## Things to note
+
+- All stories are wrapped with a [common decorator](https://storybook.js.org/docs/react/writing-stories/decorators#story-decorators) which wraps stories in both a `@sanity/ui` `<ThemeProvider>` but also a `<Card>` with padding, so the logos render on the light or dark Sanity theme picked in the toolbar. Stories that depend on exact viewport dimensions can opt out of the padding with the `padding: 0` parameter.
+- Every story is rendered as a smoke test in a real browser with the [Vitest addon](https://storybook.js.org/docs/writing-tests/integrations/vitest-addon) (`pnpm test:browser`), and interaction tests are written as story `play` functions. Take care when renaming stories or ids that `play` functions rely on.

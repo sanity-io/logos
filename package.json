@@ -1,117 +1,37 @@
 {
-  "name": "@sanity/logos",
-  "version": "2.2.2",
-  "keywords": [
-    "sanity",
-    "ui",
-    "logos"
-  ],
-  "homepage": "https://www.sanity.io/",
-  "bugs": {
-    "url": "https://github.com/sanity-io/logos/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sanity-io/logos.git"
-  },
+  "name": "sanity-logos-monorepo",
+  "version": "0.0.0",
+  "private": true,
   "license": "MIT",
   "author": "Sanity.io <hello@sanity.io>",
-  "sideEffects": false,
-  "type": "module",
-  "exports": {
-    ".": {
-      "source": "./src/index.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
-    },
-    "./package.json": "./package.json"
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "pkg build --strict --check --clean",
-    "clean": "rimraf .workshop dist",
-    "commit": "cz",
-    "dev": "workshop dev",
-    "format": "prettier --write --cache --ignore-unknown .",
-    "lint": "oxlint",
-    "prepare": "husky install",
-    "prepublishOnly": "pnpm build",
-    "release": "semantic-release",
-    "typecheck": "tsc --noEmit",
-    "watch": "pkg watch --strict"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,mjs,cjs}": [
-      "prettier --cache --write",
-      "oxlint --fix --quiet"
-    ],
-    "*": [
-      "prettier --write --cache --ignore-unknown"
-    ]
-  },
-  "browserslist": "extends @sanity/browserslist-config",
-  "release": {
-    "branches": [
-      "+([0-9])?(.{+([0-9]),x}).x",
-      "main",
-      {
-        "name": "beta",
-        "prerelease": true
-      },
-      {
-        "name": "alpha",
-        "prerelease": true
-      }
-    ],
-    "extends": "@sanity/semantic-release-preset"
-  },
-  "dependencies": {
-    "@sanity/color": "^3.0.6"
+    "build": "pnpm --filter @sanity/logos build",
+    "changeset": "changeset",
+    "clean": "pnpm --recursive clean",
+    "dev": "pnpm --filter sanity-logos-storybook dev",
+    "format": "oxfmt . --no-error-on-unmatched-pattern",
+    "knip": "knip --treat-config-hints-as-errors",
+    "lint": "pnpm run oxlint",
+    "lint:fix": "pnpm lint --fix --fix-suggestions",
+    "oxlint": "oxlint --disable-nested-config",
+    "release": "changeset publish",
+    "storybook:build": "pnpm --filter sanity-logos-storybook build",
+    "test:browser": "pnpm --filter sanity-logos-storybook test",
+    "watch": "pnpm --filter @sanity/logos watch"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
-    "@sanity/pkg-utils": "^8.1.21",
-    "@sanity/prettier-config": "^2.0.1",
-    "@sanity/semantic-release-preset": "^4.1.8",
-    "@sanity/ui": "4.0.0-static.38",
-    "@sanity/ui-workshop": "4.0.0-static.11",
-    "@types/node": "^24.7.2",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "babel-plugin-react-compiler": "1.0.0",
-    "commitizen": "^4.3.1",
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.5.2",
-    "oxlint": "^1.23.0",
-    "prettier": "^3.6.2",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "rimraf": "^5.0.5",
-    "semantic-release": "^23.1.1",
-    "typescript": "5.9.3"
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.3",
+    "@types/node": "catalog:",
+    "eslint-plugin-storybook": "^10.6.0",
+    "knip": "^6.38.0",
+    "oxfmt": "^0.71.0",
+    "oxlint": "^1.86.0",
+    "oxlint-tsgolint": "^7.0.2003",
+    "typescript": "catalog:"
   },
-  "peerDependencies": {
-    "react": "^18.3 || ^19.0.0-0"
-  },
-  "packageManager": "pnpm@10.18.3",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=22.13"
   },
-  "publishConfig": {
-    "access": "public"
-  }
+  "packageManager": "pnpm@12.6.0"
 }

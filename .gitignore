@@ -1,4 +1,14 @@
+*.tgz
+
 .DS_Store
-.workshop
 dist
 node_modules
+storybook-static
+
+# Vitest browser mode failure screenshots and attachments
+__screenshots__
+.vitest-attachments
+
+# Playwright
+test-results
+playwright-report
