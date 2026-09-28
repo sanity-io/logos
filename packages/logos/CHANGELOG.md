@@ -1,5 +1,11 @@
 # @sanity/logos
 
+## 2.2.6
+
+### Patch Changes
+
+- [#195](https://github.com/sanity-io/logos/pull/195) [`d8c03d4`](https://github.com/sanity-io/logos/commit/d8c03d45e7f508233a2b1d5d16241caed9bf0d05) Thanks [@squiggler-app](https://github.com/apps/squiggler-app)! - fix(deps): update dependency @sanity/color to ^3.0.9
+
 ## 2.2.5
 
 ### Patch Changes
