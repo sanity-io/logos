@@ -1,5 +1,11 @@
 # @sanity/logos
 
+## 2.2.7
+
+### Patch Changes
+
+- [#207](https://github.com/sanity-io/logos/pull/207) [`6e1df6e`](https://github.com/sanity-io/logos/commit/6e1df6ed205259683977bb569f1733837a6cd3d1) Thanks [@squiggler-app](https://github.com/apps/squiggler-app)! - fix(deps): update dependency tsdown to ^0.23.1
+
 ## 2.2.6
 
 ### Patch Changes
