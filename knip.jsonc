@@ -1,3 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
+  // oxlint resolves the `tsrs-lint` binary at runtime for type-aware linting,
+  // which knip can't trace back to the `tsrs` devDependency
+  "ignoreDependencies": ["tsrs"],
 }
