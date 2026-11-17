@@ -26,8 +26,8 @@
     "eslint-plugin-storybook": "^10.6.1",
     "knip": "^6.38.0",
     "oxfmt": "^0.71.0",
-    "oxlint": "^1.87.0",
-    "oxlint-tsgolint": "^7.0.2003",
+    "oxlint": "^1.94.0",
+    "tsrs": "^0.25.0-ts7.1.0-beta",
     "typescript": "catalog:"
   },
   "engines": {
